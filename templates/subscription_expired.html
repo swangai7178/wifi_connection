@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Subscription Expired</title>
+   
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+
+        .payment-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .payment-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+      <script>
+        // JavaScript code to add the user ID to the href when clicked
+        function addUserIDToHref() {
+            var url = '/payment_page.html?user_id=' + getUserIdFromUrl(); // Append user ID to the URL
+            window.location.href = url; // Redirect to the updated URL
+        }
+
+        // JavaScript code to extract the user ID from the URL
+        function getUserIdFromUrl() {
+            var url = window.location.href;
+            var match = url.match(/[?&]user_id=([^&]+)/);
+            return match && match[1];
+        }
+
+        // JavaScript code to log the user ID from the URL
+        var userId = getUserIdFromUrl();
+        if (userId) {
+            console.log("User ID:", userId);
+            // Perform actions with the user ID
+        } else {
+            console.log("User ID not found in the URL.");
+        }
+    </script>
+    <div class="container">
+        <h1>Subscription Expired</h1>
+        <p>Your subscription has expired, and you are disconnected from Wi-Fi.</p>
+        <p>To renew your subscription, please make a payment via Safaricom M-Pesa:</p>
+        <a href="{{ url_for('payment_page', user_id=user_id) }}" class="payment-button">Pay with M-Pesa</a>
+
+
+    </div>
+</body>
+</html>
