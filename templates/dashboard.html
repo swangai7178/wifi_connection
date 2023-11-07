@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .subscription-info {
+            background-color: #f7f7f7;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        .upgrade-options {
+            margin-top: 20px;
+        }
+
+        .upgrade-option {
+            display: inline-block;
+            margin-right: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .upgrade-option:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Your Dashboard</h1>
+        <p>Hello, User {{ user_id }}!</p>
+        <div class="subscription-info">
+            <p>Your subscription is currently active and allows you to access our premium Wi-Fi network.</p>
+            <p>Subscription Details:</p>
+            <ul>
+                <li>Subscription Type: Premium</li>
+                <li>Subscription Expires: 31st October 2023</li>
+                <!-- Add more subscription details here -->
+            </ul>
+        </div>
+        <div class="upgrade-options">
+            <p>Upgrade or downgrade your subscription:</p>
+            <a href="#" class="upgrade-option">Upgrade to Deluxe</a>
+            <a href="#" class="upgrade-option">Downgrade to Basic</a>
+            <!-- Add more upgrade/downgrade options as needed -->
+        </div>
+    </div>
+</body>
+</html>
